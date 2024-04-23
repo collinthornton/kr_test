@@ -1,0 +1,5 @@
+repositories:
+  orange-ros2:
+    type: git
+    url: https://gitlab.com/kassowrobots/orange-ros2.git
+    version: c5c0adeed55f151d9422116f83d404e33974d276
