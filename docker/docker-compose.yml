@@ -10,8 +10,9 @@ services:
       XAUTHORITY: $XAUTHORITY
       NVIDIA_DRIVER_CAPABILITIES: all
       ROS_LOG_DIR: /tmp
+      ROS_DOMAIN_ID: 10
     container_name: kr_test
-    entrypoint: /entrypoint.bash # Options are 'position_node' or 'velocity_node'
+    entrypoint: /entrypoint.bash
     stdin_open: true
     tty: true
     network_mode: host

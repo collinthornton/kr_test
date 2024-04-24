@@ -1,5 +1,7 @@
+#! /usr/bin/env python3
+
 import rclpy
-from position_traj import PositionTrajGenerator
+from kr_test import PositionTrajGenerator
 
 
 def main(args=None):

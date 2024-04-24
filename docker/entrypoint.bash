@@ -7,3 +7,4 @@ fi
 
 source /opt/kr_test/install/setup.bash
 ros2 run kr_test $1
+
