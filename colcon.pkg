@@ -1,0 +1,3 @@
+{
+    "hooks": ["share/nss_2024/hook/ros_package_path.dsv"]
+}

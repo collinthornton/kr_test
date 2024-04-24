@@ -2,7 +2,7 @@ import numpy as np
 
 from kr_msgs.msg import JogJoint
 
-from gen_traj import TrajGenerator
+from .gen_traj import TrajGenerator
 
 
 class VelocityTrajGenerator(TrajGenerator):

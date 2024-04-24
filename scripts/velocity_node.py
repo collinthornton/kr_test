@@ -1,5 +1,5 @@
 import rclpy
-from velocity_traj import VelocityTrajGenerator
+from kr_test import VelocityTrajGenerator
 
 
 def main(args=None):

@@ -1,7 +1,7 @@
 import numpy as np
 from kr_msgs.msg import FollowJoint, SystemState
 
-from gen_traj import TrajGenerator
+from .gen_traj import TrajGenerator
 
 
 class PositionTrajGenerator(TrajGenerator):

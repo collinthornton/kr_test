@@ -1,18 +1,15 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 
 package_name = 'kr_test'
-
-sources = ['gen_traj.py', 'position_traj.py', 'velocity_traj.py']
 
 setup(
     name=package_name,
     version='0.0.0',
-    packages=[package_name],
+    packages=find_packages(),
     data_files=[
-        ('lib/' + package_name, [package_name + "/" + name for name in sources]),
-        ('share/ament_index/resource_index/packages',
-            ['resource/' + package_name]),
-        ('share/' + package_name, ['package.xml']),
+        (f'share/ament_index/resource_index/packages', [f'resource/{package_name}']),
+        (f'share/{package_name}', ['package.xml']),
+        (f'share/{package_name}/hook', [f'resource/ros_package_path.dsv'])
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -21,10 +18,8 @@ setup(
     description='Test the ROS2 CBun for the Kassow KR1410 robotic manipulator',
     license='BSD',
     tests_require=['pytest'],
-    entry_points={
-        'console_scripts': [
-            'position_node = kr_test.position_node:main',
-            'velocity_node = kr_test.velocity_node:main'
-        ],
-    },
+    scripts=[
+        'scripts/position_node.py',
+        'scripts/velocity_node.py'
+    ]
 )
