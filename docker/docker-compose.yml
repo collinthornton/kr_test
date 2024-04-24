@@ -10,6 +10,7 @@ services:
       XAUTHORITY: $XAUTHORITY
       NVIDIA_DRIVER_CAPABILITIES: all
       ROS_LOG_DIR: /tmp
+      ROS_DOMAIN_ID: 10
     container_name: kr_test
     entrypoint: /entrypoint.bash
     stdin_open: true

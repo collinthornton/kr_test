@@ -9,7 +9,6 @@ setup(
     data_files=[
         (f'share/ament_index/resource_index/packages', [f'resource/{package_name}']),
         (f'share/{package_name}', ['package.xml']),
-        (f'share/{package_name}/hook', [f'resource/ros_package_path.dsv'])
     ],
     install_requires=['setuptools'],
     zip_safe=True,

@@ -9,15 +9,13 @@ class VelocityTrajGenerator(TrajGenerator):
     def __init__(self, amplitude, period, publish_period):
         super().__init__('velocity_test', JogJoint, '/kr/motion/jog_joint', publish_period)
 
-        self.amplitude = amplitude
-        self.period = period
-        self.publish_period = publish_period
-
-        self.start_time = self._get_time()
+        self.__amplitude = amplitude
+        self.__period = period
+        self.__publish_period = publish_period
 
     def get_next_point(self):
-        elapsed_time = self._ros_duration_to_float(self._get_time(), self.start_time)
-        output = np.zeros((7,)) + self.amplitude * np.sin(((2*np.pi)/self.period)*elapsed_time)
+        t = self._elapsed_time(self._start_time)
+        output = np.zeros((7,)) + self.__amplitude * np.sin(((2*np.pi)/self.__period)*t)
 
         msg = JogJoint()
         msg.jsvel = np.degrees(output.tolist())
